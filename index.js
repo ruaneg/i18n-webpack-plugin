@@ -52,20 +52,25 @@ I18nPlugin.prototype.apply = function(compiler) {
     compilation.dependencyTemplates.set(ConstDependency, new ConstDependency.Template());
   });
 
-  compiler.parser.plugin("call " + this.functionName, function(expr) {
-    var args = expr.arguments.map(function(arg) {return extractArgs(arg)});
+	var that = this;
+	compiler.plugin("compilation", function(compilation, data) {
+		data.normalModuleFactory.plugin("parser", function(parser, options) {
+			parser.plugin("call " + that.functionName, function(expr) {
+				var args = expr.arguments.map(function(arg) {return extractArgs(arg)});
 
-    i18next.changeLanguage(lang, function (err, t) {
-      var value = q + t.apply(i18next, args) + q;
+				i18next.changeLanguage(lang, function (err, t) {
+					var value = q + t.apply(i18next, args) + q;
 
-      var dep = new ConstDependency(value, expr.range);
-      dep.loc = expr.loc;
-      this.state.current.addDependency(dep);
+					var dep = new ConstDependency(value, expr.range);
+					dep.loc = expr.loc;
+					this.state.current.addDependency(dep);
 
-    }.bind(this));
+				}.bind(this));
 
-    return true;
-  });
+				return true;
+			});
+		});
+	});
 
 };
 
