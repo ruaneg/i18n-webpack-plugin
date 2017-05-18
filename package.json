@@ -1,8 +1,8 @@
 {
-  "name": "i18next-webpack-plugin",
-  "version": "0.1.2",
-  "author": "Kamil Głód @kglod",
-  "description": "Embed localization into your bundle",
+  "name": "i18next-webpack2-plugin",
+  "version": "0.1",
+  "author": "Gary Ruane",
+  "description": "Embed i18next localization into your bundle for Webpack 2+",
   "main": "index",
   "scripts": {
     "test": "mocha && npm run lint",
@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "webpack": ">=0.10 <2"
+    "webpack": ">2"
   },
   "licenses": [
     {

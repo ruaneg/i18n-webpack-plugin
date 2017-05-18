@@ -1,4 +1,4 @@
-# i18n plugin for webpack
+# i18next plugin for webpack 2.*
 
 ## Usage
 
