@@ -1,6 +1,6 @@
 {
   "name": "i18next-webpack2-plugin",
-  "version": "0.1",
+  "version": "0.2.0",
   "author": "Gary Ruane",
   "description": "Embed i18next localization into your bundle for Webpack 2+",
   "main": "index",
