@@ -1,6 +1,7 @@
 {
+endata@users.noreply.github.com
   "name": "i18next-webpack2-plugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Gary Ruane",
   "description": "Embed i18next localization into your bundle for Webpack 2+",
   "main": "index",
@@ -20,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kamilglod/i18n-webpack-plugin.git"
+    "url": "https://github.com/ruaneg/i18next-webpack2-plugin"
   },
   "devDependencies": {
     "chai": "^3.5.0",
